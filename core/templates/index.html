@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+{% block content %}
+
+ {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+<center>
+
+    <div class="alert alert-info">
+  <h2>List of Events</h2>
+</div>
+
+    <br>
+
+<div class="container-fluid">
+    <h2>Birthday</h2>
+ <a href="/Birthday">Participate</a>
+    </div>
+
+
+<hr>
+<div class="container-fluid">
+    <h2>Dance</h2>
+ <a href="/Dance">Participate</a>
+    </div>
+
+<br>
+<hr>
+
+
+<div class="container-fluid">
+    <h3>Music</h3><a href="/Music">Participate</a>
+    </div>
+
+    <br>
+    <hr>
+
+    <div class="container-fluid">
+    <h3>SkinBurn</h3><a href="/SkinBurn">Participate</a>
+    </div>
+
+    <br>
+<hr>
+
+    <div class="container-fluid">
+    <h3>Ai Hackathon</h3><a href="/Ai">Participate</a>
+    </div>
+        <br>
+
+<hr>
+</center>
+{% endblock %}

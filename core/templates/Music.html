@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <center>
+    <h1>Welcome in Music Event</h1>
+    <img src="static\images\skin.jpg" alt="Girl in a jacket" width="600" height="400">
+        </center>
+    <br>
+<center>
+
+ {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+
+   <form action="/reg_form" method="post" class="form">
+    {% csrf_token %}
+
+        <button type="submit" class="btn btn-info">Register</button>
+
+
+    <h3>Event Details:</h3>
+    <h2>EDM Live Concert</h2>
+
+    <h3>When:</h3>
+    <h2>15 Oct 2019</h2>
+
+    <h3>Where:</h3>
+    <h2>Opp Bund Market city,Pune</h2>
+    <br>
+</center>
+</head>
+<body>
+
+</body>
+</html>

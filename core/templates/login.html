@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+
+<div class="jumbotron">
+ {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+<body style="background-color:#9CB2F3">
+{% block content %}
+
+<br>
+<br>
+<br>
+<center>
+  <h2>Log in to My Application</h2>
+  {% if form.errors %}
+    <p style="color: red">Your username and password didn't match. Please try again.</p>
+  {% endif %}
+  <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}" />
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}<br>
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+        {% if field.help_text %}
+          <p><small style="color: grey">{{ field.help_text }}</small></p>
+        {% endif %}
+      </p>
+    {% endfor %}
+    <button type="submit">Log in</button>
+    <br>
+    <br>
+    <a href="{% url 'Signup' %}">New to My Application? Sign up</a>
+  </form>
+  </center>
+</div>
+{% endblock %}
